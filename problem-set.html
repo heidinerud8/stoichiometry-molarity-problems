@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stoichiometry Problem Set: Finding Original Molarity (Standalone HTML version)</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #4b5563;
+      --border: #d1d5db;
+      --accent: #1d4ed8;
+      --challenge-bg: #fff7ed;
+      --challenge-border: #fb923c;
+      --hint-bg: #eff6ff;
+      --hint-border: #60a5fa;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1rem 3rem;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.25;
+    }
+
+    p,
+    li {
+      margin-top: 0;
+    }
+
+    .section-card,
+    article {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+    }
+
+    .section-card + .section-card,
+    .section-card + hr,
+    hr + article,
+    article + hr {
+      margin-top: 1rem;
+    }
+
+    ol {
+      padding-left: 1.5rem;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 280px;
+    }
+
+    caption {
+      text-align: left;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    th,
+    td {
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    th {
+      background: #e5e7eb;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid var(--border);
+      margin: 1rem 0;
+    }
+
+    article.challenge {
+      background: var(--challenge-bg);
+      border-left: 4px solid var(--challenge-border);
+    }
+
+    .hint {
+      margin-bottom: 0;
+      padding: 0.75rem 1rem;
+      background: var(--hint-bg);
+      border-left: 4px solid var(--hint-border);
+      border-radius: 8px;
+    }
+
+    .overview {
+      color: var(--muted);
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 1rem 0.75rem 2rem;
+      }
+
+      .section-card,
+      article {
+        padding: 1rem;
+      }
+
+      th,
+      td {
+        padding: 0.625rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="section-card">
+      <h1>Stoichiometry Problem Set: Finding Original Molarity <span class="visually-hidden">(Standalone HTML version)</span></h1>
+      <div>
+        <h2 id="overview-heading">Overview</h2>
+        <p class="overview">In these problems, a solution reacts to form a <strong>solid precipitate</strong>. The precipitate is collected by filtration, dried, and weighed. Using the <strong>mass of the solid product</strong> and <strong>stoichiometry</strong>, you will work backward to determine the <strong>original molarity (M)</strong> of a reactant in solution.</p>
+      </div>
+    </header>
+
+    <section class="section-card" aria-labelledby="strategy-heading">
+      <h2 id="strategy-heading">General Strategy</h2>
+      <ol>
+        <li><strong>Write a balanced chemical equation</strong> for the reaction.</li>
+        <li><strong>Convert the mass of the solid product to moles</strong> using its molar mass.</li>
+        <li><strong>Use the mole ratio</strong> from the balanced equation to find moles of the reactant of interest.</li>
+        <li><strong>Calculate molarity</strong> using: M = moles of solute ÷ liters of solution</li>
+      </ol>
+    </section>
+
+    <section class="section-card" aria-labelledby="molar-masses-heading">
+      <h2 id="molar-masses-heading">Useful Molar Masses (g/mol)</h2>
+      <div class="table-wrapper">
+        <table>
+          <caption>Reference compounds and molar masses used in the problems below</caption>
+          <thead>
+            <tr>
+              <th scope="col">Compound</th>
+              <th scope="col">Molar Mass</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>AgCl</td><td>143.32</td></tr>
+            <tr><td>BaSO<sub>4</sub></td><td>233.38</td></tr>
+            <tr><td>CaCO<sub>3</sub></td><td>100.09</td></tr>
+            <tr><td>PbI<sub>2</sub></td><td>461.01</td></tr>
+            <tr><td>AgBr</td><td>187.77</td></tr>
+            <tr><td>Mg(OH)<sub>2</sub></td><td>58.32</td></tr>
+            <tr><td>CuS</td><td>95.61</td></tr>
+            <tr><td>Al(OH)<sub>3</sub></td><td>78.00</td></tr>
+            <tr><td>Fe<sub>2</sub>O<sub>3</sub></td><td>159.69</td></tr>
+            <tr><td>Zn<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub></td><td>386.11</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <hr>
+
+    <section aria-labelledby="problems-heading">
+      <h2 id="problems-heading">Problems</h2>
+
+      <article aria-labelledby="problem-1-heading">
+        <h3 id="problem-1-heading">Problem 1</h3>
+        <p>A 25.00 mL sample of silver nitrate (AgNO<sub>3</sub>) solution of unknown concentration reacts completely with excess sodium chloride (NaCl). The solid silver chloride (AgCl) precipitate is collected, dried, and found to have a mass of 0.717 g. What was the molarity of the original AgNO<sub>3</sub> solution?</p>
+      </article>
+
+      <hr>
+
+      <article aria-labelledby="problem-2-heading">
+        <h3 id="problem-2-heading">Problem 2</h3>
+        <p>A 50.00 mL sample of a barium chloride (BaCl<sub>2</sub>) solution is treated with excess sulfuric acid (H<sub>2</sub>SO<sub>4</sub>). The barium sulfate (BaSO<sub>4</sub>) precipitate that forms is filtered, dried, and weighs 1.167 g. Calculate the molarity of the BaCl<sub>2</sub> solution.</p>
+      </article>
+
+      <hr>
+
+      <article aria-labelledby="problem-3-heading">
+        <h3 id="problem-3-heading">Problem 3</h3>
+        <p>A 100.0 mL sample of calcium nitrate (Ca(NO<sub>3</sub>)<sub>2</sub>) solution reacts with excess sodium carbonate (Na<sub>2</sub>CO<sub>3</sub>). The calcium carbonate (CaCO<sub>3</sub>) precipitate is collected and has a mass of 0.500 g. What was the original molarity of the calcium nitrate solution?</p>
+      </article>
+
+      <hr>
+
+      <article aria-labelledby="problem-4-heading">
+        <h3 id="problem-4-heading">Problem 4</h3>
+        <p>A 20.00 mL sample of lead(II) nitrate (Pb(NO<sub>3</sub>)<sub>2</sub>) solution is mixed with excess potassium iodide (KI). The lead(II) iodide (PbI<sub>2</sub>) precipitate weighs 0.461 g after drying. Determine the molarity of the Pb(NO<sub>3</sub>)<sub>2</sub> solution.</p>
+      </article>
+
+      <hr>
+
+      <article aria-labelledby="problem-5-heading">
+        <h3 id="problem-5-heading">Problem 5</h3>
+        <p>A student has a sodium hydroxide (NaOH) solution of unknown concentration. They take a 40.00 mL sample and add excess magnesium chloride (MgCl<sub>2</sub>). The magnesium hydroxide (Mg(OH)<sub>2</sub>) precipitate that forms weighs 0.291 g. What is the molarity of the NaOH solution?</p>
+        <p class="hint"><em>Hint: Pay attention to the mole ratio!</em></p>
+      </article>
+
+      <hr>
+
+      <article aria-labelledby="problem-6-heading">
+        <h3 id="problem-6-heading">Problem 6</h3>
+        <p>A 75.00 mL sample of potassium bromide (KBr) solution is reacted with excess silver nitrate (AgNO<sub>3</sub>). The silver bromide (AgBr) precipitate has a mass of 1.878 g. Calculate the molarity of the original KBr solution.</p>
+      </article>
+
+      <hr>
+
+      <article aria-labelledby="problem-7-heading">
+        <h3 id="problem-7-heading">Problem 7</h3>
+        <p>A 30.00 mL sample of copper(II) sulfate (CuSO<sub>4</sub>) solution reacts with excess hydrogen sulfide (H<sub>2</sub>S) gas. The copper(II) sulfide (CuS) precipitate weighs 0.478 g. Find the molarity of the CuSO<sub>4</sub> solution.</p>
+      </article>
+
+      <hr>
+
+      <article aria-labelledby="problem-8-heading">
+        <h3 id="problem-8-heading">Problem 8</h3>
+        <p>A 60.00 mL sample of aluminum chloride (AlCl<sub>3</sub>) solution is treated with excess sodium hydroxide (NaOH) under controlled conditions. The aluminum hydroxide (Al(OH)<sub>3</sub>) precipitate is collected and weighs 0.780 g. What was the molarity of the AlCl<sub>3</sub> solution?</p>
+      </article>
+
+      <hr>
+
+      <article class="challenge" aria-labelledby="problem-9-heading" aria-label="Problem 9 challenge problem">
+        <h3 id="problem-9-heading">Problem 9 (Challenge)</h3>
+        <p>A 50.00 mL sample of an iron(III) chloride (FeCl<sub>3</sub>) solution is reacted with excess sodium hydroxide. The iron(III) hydroxide precipitate is collected and then <strong>heated strongly</strong> to convert it entirely to iron(III) oxide (Fe<sub>2</sub>O<sub>3</sub>), which weighs 0.400 g. Calculate the molarity of the original FeCl<sub>3</sub> solution.</p>
+        <p class="hint"><em>Hint: You need two balanced equations — one for the precipitation and one for the decomposition.</em></p>
+      </article>
+
+      <hr>
+
+      <article class="challenge" aria-labelledby="problem-10-heading" aria-label="Problem 10 challenge problem">
+        <h3 id="problem-10-heading">Problem 10 (Challenge)</h3>
+        <p>A 45.00 mL sample of zinc nitrate (Zn(NO<sub>3</sub>)<sub>2</sub>) solution reacts with excess sodium phosphate (Na<sub>3</sub>PO<sub>4</sub>). The zinc phosphate (Zn<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>) precipitate weighs 0.579 g. Determine the molarity of the Zn(NO<sub>3</sub>)<sub>2</sub> solution.</p>
+        <p class="hint"><em>Hint: The mole ratio is not 1:1!</em></p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
